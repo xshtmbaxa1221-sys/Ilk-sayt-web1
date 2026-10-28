@@ -3,32 +3,82 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tabiat Manzarasi</title>
+    <title>Xiva Sayohat Qo'llanmasi</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <video id="natureVideo" autoplay muted loop playsinline>
-        <source src="/home/kbaxa/Desktop/w/Web dasturlash/1amaliy/16126189_3840_2160_30fps.mp4" type="video/mp4">
-    </video>
+    <header>
+        <div class="container">
+            <div class="logo">Xiva Sayohat</div>
+            <nav>
+                <a href="index.html" class="active">Bosh sahifa</a>
+                <a href="batafsil.html">Batafsil</a>
+            </nav>
+        </div>
+    </header>
 
-    <div class="controls">
-        <button id="pauseBtn" class="btn">⏸ Pauza</button>
-        <a href="batafsil.html" class="btn details-btn">Batafsil</a>
-    </div>
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Xiva — Qadimiy shahar</h1>
+            <p>Ichan-Qal'a, minoralari va tarixiy obidalari bilan mashhur Xivaga xush kelibsiz</p>
+            <a href="batafsil.html" class="btn">Batafsil ma'lumot</a>
+        </div>
+    </section>
 
-    <script>
-        const video = document.getElementById('natureVideo');
-        const pauseBtn = document.getElementById('pauseBtn');
+    <section class="about">
+        <div class="container">
+            <h2>Xiva haqida</h2>
+            <p>Xiva — Oʻzbekistonning Xorazm viloyatida joylashgan qadimiy shahar. U dunyoga mashhur Ichan-Qal'a majmuasi bilan tanilgan. Shahar ipak yoʻli davridan beri muhim savdo markazi boʻlib kelgan. Bugungi kunda Xiva YuNESKO roʻyxatiga kiritilgan va sayyohlar uchun eng jozibador manzillardan biridir.</p>
+        </div>
+    </section>
 
-        pauseBtn.addEventListener('click', () => {
-            if (video.paused) {
-                video.play();
-                pauseBtn.textContent = '⏸ Pauza';
-            } else {
-                video.pause();
-                pauseBtn.textContent = '▶ Davom etish';
-            }
-        });
-    </script>
+    <section class="places">
+        <div class="container">
+            <h2>Asosiy diqqatga sazovor joylar</h2>
+            <div class="cards">
+                <div class="card">
+                    <div class="card-img img1"></div>
+                    <h3>Ichan-Qal'a</h3>
+                    <p>Shahar ichidagi qadimiy qal'a. Devorlari, minoralari va madrasalar bilan toʻla.</p>
+                </div>
+                <div class="card">
+                    <div class="card-img img2"></div>
+                    <h3>Kalon minorasi</h3>
+                    <p>Xivaning eng baland minorasi. Shaharning ramzi hisoblanadi.</p>
+                </div>
+                <div class="card">
+                    <div class="card-img img3"></div>
+                    <h3>Pakhlavon Mahmud maqbarasi</h3>
+                    <p>Mashhur shoir va pahlavonning maqbarasi. Xiva me'morchiligining durdonasi.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="info">
+        <div class="container">
+            <h2>Sayohat uchun foydali ma'lumotlar</h2>
+            <div class="info-grid">
+                <div class="info-item">
+                    <h4>Qachon borish kerak?</h4>
+                    <p>Bahor (mart-may) va kuz (sentabr-noyabr) eng qulay fasllar.</p>
+                </div>
+                <div class="info-item">
+                    <h4>Qanday yetib borish?</h4>
+                    <p>Urganch aeroportidan 30-40 daqiqalik yoʻl. Avtobus yoki taksi mavjud.</p>
+                </div>
+                <div class="info-item">
+                    <h4>Til</h4>
+                    <p>Oʻzbek va rus tillari keng tarqalgan. Ingliz tili ham tushuniladi.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>© 2026 Xiva Sayohat Qo'llanmasi. Barcha huquqlar himoyalangan.</p>
+        </div>
+    </footer>
 </body>
 </html>
