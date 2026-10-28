@@ -6,67 +6,208 @@
 
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(135deg, #1a3a2a, #0d1f17);
-    color: #e8f5e9;
-    min-height: 100vh;
-    padding: 40px 20px;
+    line-height: 1.6;
+    color: #333;
+    background: #f8f5f0;
 }
 
 .container {
-    max-width: 800px;
+    max-width: 1100px;
     margin: 0 auto;
+    padding: 0 20px;
 }
 
-h1 {
-    text-align: center;
-    font-size: 2.8rem;
-    margin-bottom: 40px;
-    color: #a5d6a7;
-    text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+header {
+    background: #2c3e50;
+    color: #fff;
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
 }
 
-.info-card {
-    background: rgba(255, 255, 255, 0.08);
-    backdrop-filter: blur(12px);
-    border-radius: 20px;
-    padding: 30px;
-    margin-bottom: 25px;
-    border: 1px solid rgba(255, 255, 255, 0.12);
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-.info-card h2 {
-    color: #81c784;
-    margin-bottom: 15px;
+.logo {
     font-size: 1.5rem;
+    font-weight: bold;
+    letter-spacing: 1px;
 }
 
-.info-card p {
-    line-height: 1.7;
-    margin-bottom: 12px;
-    color: #c8e6c9;
-}
-
-.info-card ul {
-    padding-left: 25px;
-    line-height: 1.9;
-    color: #c8e6c9;
-}
-
-.back-btn {
-    display: inline-block;
-    margin-top: 20px;
-    padding: 12px 28px;
-    background: rgba(129, 199, 132, 0.3);
-    color: #044b04;
+nav a {
+    color: #fff;
     text-decoration: none;
-    border-radius: 50px;
-    border: 1px solid rgba(129, 199, 132, 0.5);
-    font-weight: 600;
-    transition: all 0.3s ease;
+    margin-left: 25px;
+    font-size: 1rem;
+    transition: color 0.3s;
 }
 
-.back-btn:hover {
-    background: rgba(129, 199, 132, 0.5);
-    transform: translateY(-2px);
+nav a:hover,
+nav a.active {
+    color: #e67e22;
+}
+
+.page-hero {
+    background: #2c3e50;
+    color: #fff;
+    padding: 50px 0;
+    text-align: center;
+}
+
+.page-hero h1 {
+    font-size: 2.2rem;
+    margin-bottom: 10px;
+}
+
+.page-hero p {
+    font-size: 1.1rem;
+    opacity: 0.9;
+}
+
+.content {
+    padding: 50px 0;
+}
+
+.place {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    margin-bottom: 60px;
+    align-items: center;
+}
+
+.place.reverse {
+    direction: rtl;
+}
+
+.place.reverse .place-text {
+    direction: ltr;
+}
+
+.place-img {
+    height: 280px;
+    border-radius: 10px;
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+}
+
+.img-ichan {
+    background-image: url('../img/ichanqala.jpg');
+}
+
+.img-kalon {
+    background-image: url('../img/kalon.jpg');
+}
+
+.img-pakhlavon {
+    background-image: url('../img/pahlavonmahmud.jpg');
+}
+
+.img-toshhovli {
+    background-image: url('../img/toshlavh.jpg');
+}
+
+.place-text h2 {
+    color: #2c3e50;
+    margin-bottom: 15px;
+    font-size: 1.7rem;
+}
+
+.place-text p {
+    margin-bottom: 15px;
+    color: #555;
+    font-size: 1.05rem;
+}
+
+.place-text ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.place-text ul li {
+    padding: 6px 0;
+    padding-left: 22px;
+    position: relative;
+    color: #444;
+}
+
+.place-text ul li::before {
+    content: "•";
+    color: #e67e22;
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+}
+
+.tips {
+    padding: 50px 0;
+    background: #fff;
+}
+
+.tips h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    color: #2c3e50;
+    font-size: 1.9rem;
+}
+
+.tips-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 25px;
+}
+
+.tip {
+    background: #f8f5f0;
+    padding: 25px;
+    border-radius: 8px;
+    border-left: 4px solid #e67e22;
+}
+
+.tip h3 {
+    color: #2c3e50;
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+}
+
+.tip p {
+    color: #555;
+    font-size: 0.95rem;
+}
+
+footer {
+    background: #1a252f;
+    color: #aaa;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+    .place {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .place.reverse {
+        direction: ltr;
+    }
+
+    .page-hero h1 {
+        font-size: 1.7rem;
+    }
+
+    nav a {
+        margin-left: 15px;
+        font-size: 0.9rem;
+    }
+
+    .place-img {
+        height: 220px;
+    }
 }
