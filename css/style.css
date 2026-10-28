@@ -5,57 +5,220 @@
 }
 
 body {
-    overflow: hidden;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: #eeeaea;
+    line-height: 1.6;
+    color: #333;
+    background: #f8f5f0;
 }
 
-#natureVideo {
-    position: fixed;
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+header {
+    background: #2c3e50;
+    color: #fff;
+    padding: 15px 0;
+    position: sticky;
     top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: 1;
+    z-index: 100;
 }
 
-.controls {
-    position: fixed;
-    bottom: 40px;
-    left: 50%;
-    transform: translateX(-50%);
+header .container {
     display: flex;
-    gap: 20px;
-    z-index: 10;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    margin-left: 25px;
+    font-size: 1rem;
+    transition: color 0.3s;
+}
+
+nav a:hover,
+nav a.active {
+    color: #e67e22;
+}
+
+.hero {
+    background: linear-gradient(rgba(44, 62, 80, 0.7), rgba(44, 62, 80, 0.7)), url('../img/xiva.jpg') center/cover no-repeat;
+    height: 480px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+}
+
+.hero-content h1 {
+    font-size: 2.8rem;
+    margin-bottom: 15px;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 25px;
+    max-width: 600px;
 }
 
 .btn {
-    padding: 14px 32px;
-    font-size: 18px;
-    font-weight: 600;
-    border: none;
-    border-radius: 50px;
-    cursor: pointer;
-    background: rgba(255, 255, 255, 0.2);
-    color: white;
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    transition: all 0.3s ease;
-    text-decoration: none;
     display: inline-block;
+    background: #e67e22;
+    color: #fff;
+    padding: 12px 30px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 600;
+    transition: background 0.3s;
 }
 
 .btn:hover {
-    background: rgba(255, 255, 255, 0.35);
-    transform: translateY(-3px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    background: #d35400;
 }
 
-.details-btn {
-    background: rgba(46, 204, 113, 0.4);
+.about {
+    padding: 60px 0;
+    background: #fff;
 }
 
-.details-btn:hover {
-    background: rgba(46, 204, 113, 0.7);
+.about h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #2c3e50;
+    font-size: 1.9rem;
+}
+
+.about p {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 1.1rem;
+    color: #555;
+}
+
+.places {
+    padding: 60px 0;
+}
+
+.places h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    color: #2c3e50;
+    font-size: 1.9rem;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.card {
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+}
+
+.card-img {
+    height: 180px;
+    background-size: cover;
+    background-position: center;
+}
+
+.img1 {
+    background-image: url('../img/ichanqala.jpg');
+}
+
+.img2 {
+    background-image: url('../img/kalon.jpg');
+}
+
+.img3 {
+    background-image: url('../img/pahlavonmahmud.jpg');
+}
+
+.card h3 {
+    padding: 15px 20px 8px;
+    color: #2c3e50;
+}
+
+.card p {
+    padding: 0 20px 20px;
+    color: #666;
+    font-size: 0.95rem;
+}
+
+.info {
+    padding: 60px 0;
+    background: #2c3e50;
+    color: #fff;
+}
+
+.info h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 1.9rem;
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.info-item {
+    background: rgba(255,255,255,0.08);
+    padding: 25px;
+    border-radius: 8px;
+}
+
+.info-item h4 {
+    margin-bottom: 10px;
+    color: #e67e22;
+    font-size: 1.15rem;
+}
+
+.info-item p {
+    font-size: 0.95rem;
+    opacity: 0.9;
+}
+
+footer {
+    background: #1a252f;
+    color: #aaa;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+
+    nav a {
+        margin-left: 15px;
+        font-size: 0.9rem;
+    }
+
+    .hero {
+        height: 400px;
+    }
 }
